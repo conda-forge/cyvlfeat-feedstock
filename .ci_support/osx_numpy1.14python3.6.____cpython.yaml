@@ -21,6 +21,9 @@ pin_run_as_build:
   vlfeat:
     max_pin: x.x.x
 python:
-- '3.8'
+- 3.6.* *_cpython
 vlfeat:
 - 0.9.20
+zip_keys:
+- - numpy
+  - python
