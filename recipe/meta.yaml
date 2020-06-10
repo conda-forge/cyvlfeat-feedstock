@@ -1,5 +1,5 @@
 {% set name = "cyvlfeat" %}
-{% set version = "0.5.1" %}
+{% set version = "0.6.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,16 +7,16 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 95e63e4451a0368aa26fcc45175b36d3990c271329855ea155b687dc6ca26f57
+  sha256: f6c315075d4bde8d6b14dcab32d84c315e40304de2c52894bcaed11c68bd58ce
 
 build:
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
-  skip: True  # [win]
+  script: {{ PYTHON }} -m pip install . -vv
+  skip: true  # [win]
 
 requirements:
   build:
-     - {{ compiler('c') }}
+    - {{ compiler('c') }}
 
   host:
     - python
@@ -44,7 +44,7 @@ about:
   license: BSD-2-Clause
   license_family: BSD
   license_file: LICENSE.txt
-  summary: 'A Python (cython) wrapper of the VLFeat library'
+  summary: A Python (cython) wrapper of the VLFeat library
 
 extra:
   recipe-maintainers:
