@@ -29,6 +29,7 @@ requirements:
 
   run:
     - python
+    - setuptools
     - {{ pin_compatible('vlfeat', min_pin='x.x.x', max_pin='x.x.x') }}
     - {{ pin_compatible('numpy') }}
     - scipy
