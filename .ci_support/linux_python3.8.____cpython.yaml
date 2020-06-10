@@ -17,6 +17,6 @@ pin_run_as_build:
   vlfeat:
     max_pin: x.x.x
 python:
-- '2.7'
+- 3.8.* *_cpython
 vlfeat:
 - 0.9.20
