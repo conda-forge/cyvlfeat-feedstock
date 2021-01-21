@@ -25,5 +25,7 @@ target_platform:
 vlfeat:
 - 0.9.20
 zip_keys:
+- - cdt_name
+  - docker_image
 - - python
   - numpy
