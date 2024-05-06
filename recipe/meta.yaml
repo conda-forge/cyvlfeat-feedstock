@@ -18,17 +18,20 @@ requirements:
   build:
     - {{ compiler('c') }}
     - {{ stdlib("c") }}
-
+    - setuptools                             # [build_platform != target_platform]
+    - cython                                 # [build_platform != target_platform]
+    - python                                 # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+    - numpy                                  # [build_platform != target_platform]
   host:
     - python
     - setuptools
     - pip
     - vlfeat
     - scipy
-    - cython                                 # [build_platform != target_platform]
-    - python                                 # [build_platform != target_platform]
-    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
-    - numpy                                  # [build_platform != target_platform]
+    - cython
+    - python
+    - numpy
   run:
     - python
     - setuptools
