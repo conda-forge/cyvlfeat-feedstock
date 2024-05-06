@@ -1,5 +1,5 @@
 {% set name = "cyvlfeat" %}
-{% set version = "0.7.0" %}
+{% set version = "0.7.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 43570d315c82e6398b1c6a97cb737e2abedb577db41de0f0d9d31cc8f21005e5
+  sha256: e86633fb5687cfe1b5ef707b1eb618174070ca09a2b62aad7d3d8ad2a9de5562
 
 build:
-  number: 2
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
   skip: true  # [win]
 
