@@ -10,23 +10,28 @@ source:
   sha256: e86633fb5687cfe1b5ef707b1eb618174070ca09a2b62aad7d3d8ad2a9de5562
 
 build:
-  number: 0
+  number: 2
   script: {{ PYTHON }} -m pip install . -vv
   skip: true  # [win]
 
 requirements:
   build:
     - {{ compiler('c') }}
-
+    - {{ stdlib("c") }}
+    - setuptools                             # [build_platform != target_platform]
+    - cython                                 # [build_platform != target_platform]
+    - python                                 # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+    - numpy                                  # [build_platform != target_platform]
   host:
     - python
     - setuptools
     - pip
-    - numpy
-    - cython
     - vlfeat
     - scipy
-
+    - cython
+    - python
+    - numpy
   run:
     - python
     - setuptools
