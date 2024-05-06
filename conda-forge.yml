@@ -5,5 +5,8 @@ github:
 build_platform:
   osx_arm64: osx_64
   linux_aarch64: linux_aarch64
+provider:
+  linux_aarch64: default
 conda_build:
   pkg_format: '2'
+test: native_and_emulated
